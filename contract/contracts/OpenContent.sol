@@ -3,7 +3,7 @@ pragma solidity ^0.8.9;
 
 contract OpenContent {
 
-    event NewAudioPostCreated(
+    event AudioPost(
         bytes32 postId,
         string nameOfPost,
         string postDescription,
@@ -16,7 +16,7 @@ contract OpenContent {
         address owner
     );
 
-    event NewBlogPostCreated(
+    event BlogPost(
         bytes32 postId,
         string nameOfPost,
         string postDescription,
@@ -26,7 +26,7 @@ contract OpenContent {
         address owner
     );
 
-    event NewVlogPostCreated(
+    event VlogPost(
         bytes32 postId,
         string nameOfPost,
         string postDescription,
@@ -113,7 +113,7 @@ contract OpenContent {
             msg.sender
         );
 
-        emit NewAudioPostCreated(postId, nameOfPost, postDescription, thumbnailUrl, postContent, date, audioTitle, audioUrl, audioThumbnail, msg.sender);
+        emit AudioPost(postId, nameOfPost, postDescription, thumbnailUrl, postContent, date, audioTitle, audioUrl, audioThumbnail, msg.sender);
     }
 
     function createNewBlogPost(
@@ -145,7 +145,7 @@ contract OpenContent {
             msg.sender
         );
 
-        emit NewBlogPostCreated(postId, nameOfPost, postDescription, thumbnailUrl, postContent, date, msg.sender);
+        emit BlogPost(postId, nameOfPost, postDescription, thumbnailUrl, postContent, date, msg.sender);
     }
 
     function createNewVlogPost(
@@ -182,7 +182,7 @@ contract OpenContent {
             msg.sender
         );
 
-        emit NewVlogPostCreated(postId, nameOfPost, postDescription, thumbnailUrl, postContent, date, videoTitle, videoUrl, videoThumbnail, msg.sender);
+        emit VlogPost(postId, nameOfPost, postDescription, thumbnailUrl, postContent, date, videoTitle, videoUrl, videoThumbnail, msg.sender);
     }
 
 }
