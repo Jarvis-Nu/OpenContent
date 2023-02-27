@@ -1,0 +1,47 @@
+type AudioPost @entity(immutable: true) {
+  id: Bytes!
+  postId: Bytes! # bytes32
+  nameOfPost: String! # string
+  postDescription: String! # string
+  thumbnailUrl: String! # string
+  postContent: String! # string
+  date: String! # string
+  audioTitle: String! # string
+  audioUrl: String! # string
+  audioThumbnail: String! # string
+  owner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type BlogPost @entity(immutable: true) {
+  id: Bytes!
+  postId: Bytes! # bytes32
+  nameOfPost: String! # string
+  postDescription: String! # string
+  thumbnailUrl: String! # string
+  postContent: String! # string
+  date: String! # string
+  owner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type VlogPost @entity(immutable: true) {
+  id: Bytes!
+  postId: Bytes! # bytes32
+  nameOfPost: String! # string
+  postDescription: String! # string
+  thumbnailUrl: String! # string
+  postContent: String! # string
+  date: String! # string
+  videoTitle: String! # string
+  videoUrl: String! # string
+  videoThumbnail: String! # string
+  owner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

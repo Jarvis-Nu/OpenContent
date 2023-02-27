@@ -1,0 +1,30 @@
+specVersion: 0.0.5
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: OpenContent
+    network: mumbai
+    source:
+      address: "0x934C58569974Ea91FFa62cCB0634FdD37faF991D"
+      abi: OpenContent
+      startBlock: 32451814
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - AudioPost
+        - BlogPost
+        - VlogPost
+      abis:
+        - name: OpenContent
+          file: OpenContent\abis\OpenContent.json
+      eventHandlers:
+        - event: AudioPost(bytes32,string,string,string,string,string,string,string,string,address)
+          handler: handleAudioPost
+        - event: BlogPost(bytes32,string,string,string,string,string,address)
+          handler: handleBlogPost
+        - event: VlogPost(bytes32,string,string,string,string,string,string,string,string,address)
+          handler: handleVlogPost
+      file: OpenContent\OpenContent.wasm
