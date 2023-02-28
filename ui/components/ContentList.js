@@ -22,14 +22,17 @@ export default function ContentList() {
         const result = await client.query({
             query: gql`
             query Posts {
-                    postEntities(where: { owner: "${address}"}) {
-                    id
-                    nameOfPost
-                    }
+                    blogPosts(where: { owner: "${address}"}) {
+                        id
+                        postId
+                        nameOfPost
+                        postDescription
+                        thumbnailUrl
+                      }
                 }
             `
         }).catch(e => console.log(e))
-        setPosts(result?.data.postEntities)
+        setPosts(result?.data.blogPosts)
     }
   
     useEffect(() => {

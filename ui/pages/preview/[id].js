@@ -21,7 +21,7 @@ export default function Preview({ post, id }) {
                     post[0]?.thumbnailUrl && <img src={post[0]?.thumbnailUrl} className="w-full h-64" />
                 }
                 <h1 className="text-2xl font-bold">{post[0]?.nameOfPost}</h1>
-                <p className="font-semibold">Posted on {post[0]?.postDate}</p>
+                <p className="font-semibold">Posted on {post[0]?.date}</p>
                 <div>
                     <ReactQuill
                         value={post[0]?.postContent}
@@ -39,13 +39,13 @@ export async function getStaticPaths() {
     const result = await client.query({
         query: gql`
         query Posts {
-                postEntities {
+            blogPosts {
                     id
                 }
             }
         `
     }).catch(e => console.log(e))
-    const lists = result?.data.postEntities
+    const lists = result?.data.blogPosts
     const paths = []
     lists?.map(list => paths.push(`/preview/${list.id}`))
     console.log(paths)
@@ -60,18 +60,18 @@ export async function getStaticProps({ params }) {
     const result = await client.query({
         query: gql`
         query Posts {
-                postEntities(where: { id: "${id}"}) {
-                id
-                nameOfPost
-                postDescription
-                thumbnailUrl
-                postContent
-                postDate
+            blogPosts(where: { id: "${id}"}) {
+                    id
+                    nameOfPost
+                    postDescription
+                    thumbnailUrl
+                    postContent
+                    date
                 }
             }
         `
     }).catch(e => console.log(e))
-    const post = result?.data.postEntities
+    const post = result?.data.blogPosts
     
     if (post?.length == 0) {
         return {
