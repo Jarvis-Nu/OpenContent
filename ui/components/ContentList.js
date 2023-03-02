@@ -15,9 +15,14 @@ export default function ContentList() {
         await getPosts()
       }
     }
-    
+
+    async function fetchData() {
+        const result = await fetch(`/api/openapiblog?address=${address}`)
+        return result.json()
+    }
+
     async function getPosts() {
-        const res = (await fetch(`/api/openapiblog?address=${address}`)).json()
+        const res = await fetchData()
         setPosts(res.data?.blogPosts)
     }
   
