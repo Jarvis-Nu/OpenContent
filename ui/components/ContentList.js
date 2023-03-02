@@ -1,6 +1,4 @@
 import ContentItem from "./ContentItem";
-import { gql } from "@apollo/client";
-import client from "../apollo-client"
 import { useEffect, useState } from "react";
 import { useSigner } from 'wagmi';
 import Loader from "./Loader"
@@ -17,22 +15,10 @@ export default function ContentList() {
         await getPosts()
       }
     }
-
+    
     async function getPosts() {
-        const result = await client.query({
-            query: gql`
-            query Posts {
-                    blogPosts(where: { owner: "${address}"}) {
-                        id
-                        postId
-                        nameOfPost
-                        postDescription
-                        thumbnailUrl
-                      }
-                }
-            `
-        }).catch(e => console.log(e))
-        setPosts(result?.data.blogPosts)
+        const res = (await fetch(`/api/openapiblog?address=${address}`)).json()
+        setPosts(res.data?.blogPosts)
     }
   
     useEffect(() => {
