@@ -59,8 +59,16 @@ export class AudioPost__Params {
     return this._event.parameters[8].value.toString();
   }
 
+  get authorName(): string {
+    return this._event.parameters[9].value.toString();
+  }
+
+  get authorThumbnail(): string {
+    return this._event.parameters[10].value.toString();
+  }
+
   get owner(): Address {
-    return this._event.parameters[9].value.toAddress();
+    return this._event.parameters[11].value.toAddress();
   }
 }
 
@@ -101,8 +109,16 @@ export class BlogPost__Params {
     return this._event.parameters[5].value.toString();
   }
 
+  get authorName(): string {
+    return this._event.parameters[6].value.toString();
+  }
+
+  get authorThumbnail(): string {
+    return this._event.parameters[7].value.toString();
+  }
+
   get owner(): Address {
-    return this._event.parameters[6].value.toAddress();
+    return this._event.parameters[8].value.toAddress();
   }
 }
 
@@ -155,8 +171,16 @@ export class VlogPost__Params {
     return this._event.parameters[8].value.toString();
   }
 
+  get authorName(): string {
+    return this._event.parameters[9].value.toString();
+  }
+
+  get authorThumbnail(): string {
+    return this._event.parameters[10].value.toString();
+  }
+
   get owner(): Address {
-    return this._event.parameters[9].value.toAddress();
+    return this._event.parameters[11].value.toAddress();
   }
 }
 
@@ -170,7 +194,9 @@ export class OpenContent__idToNewAudioPostResult {
   value6: string;
   value7: string;
   value8: string;
-  value9: Address;
+  value9: string;
+  value10: string;
+  value11: Address;
 
   constructor(
     value0: Bytes,
@@ -182,7 +208,9 @@ export class OpenContent__idToNewAudioPostResult {
     value6: string,
     value7: string,
     value8: string,
-    value9: Address
+    value9: string,
+    value10: string,
+    value11: Address
   ) {
     this.value0 = value0;
     this.value1 = value1;
@@ -194,6 +222,8 @@ export class OpenContent__idToNewAudioPostResult {
     this.value7 = value7;
     this.value8 = value8;
     this.value9 = value9;
+    this.value10 = value10;
+    this.value11 = value11;
   }
 
   toMap(): TypedMap<string, ethereum.Value> {
@@ -207,7 +237,9 @@ export class OpenContent__idToNewAudioPostResult {
     map.set("value6", ethereum.Value.fromString(this.value6));
     map.set("value7", ethereum.Value.fromString(this.value7));
     map.set("value8", ethereum.Value.fromString(this.value8));
-    map.set("value9", ethereum.Value.fromAddress(this.value9));
+    map.set("value9", ethereum.Value.fromString(this.value9));
+    map.set("value10", ethereum.Value.fromString(this.value10));
+    map.set("value11", ethereum.Value.fromAddress(this.value11));
     return map;
   }
 
@@ -247,8 +279,16 @@ export class OpenContent__idToNewAudioPostResult {
     return this.value8;
   }
 
-  getOwner(): Address {
+  getAuthorName(): string {
     return this.value9;
+  }
+
+  getAuthorThumbnail(): string {
+    return this.value10;
+  }
+
+  getOwner(): Address {
+    return this.value11;
   }
 }
 
@@ -259,7 +299,9 @@ export class OpenContent__idToNewBlogPostResult {
   value3: string;
   value4: string;
   value5: string;
-  value6: Address;
+  value6: string;
+  value7: string;
+  value8: Address;
 
   constructor(
     value0: Bytes,
@@ -268,7 +310,9 @@ export class OpenContent__idToNewBlogPostResult {
     value3: string,
     value4: string,
     value5: string,
-    value6: Address
+    value6: string,
+    value7: string,
+    value8: Address
   ) {
     this.value0 = value0;
     this.value1 = value1;
@@ -277,6 +321,8 @@ export class OpenContent__idToNewBlogPostResult {
     this.value4 = value4;
     this.value5 = value5;
     this.value6 = value6;
+    this.value7 = value7;
+    this.value8 = value8;
   }
 
   toMap(): TypedMap<string, ethereum.Value> {
@@ -287,7 +333,9 @@ export class OpenContent__idToNewBlogPostResult {
     map.set("value3", ethereum.Value.fromString(this.value3));
     map.set("value4", ethereum.Value.fromString(this.value4));
     map.set("value5", ethereum.Value.fromString(this.value5));
-    map.set("value6", ethereum.Value.fromAddress(this.value6));
+    map.set("value6", ethereum.Value.fromString(this.value6));
+    map.set("value7", ethereum.Value.fromString(this.value7));
+    map.set("value8", ethereum.Value.fromAddress(this.value8));
     return map;
   }
 
@@ -315,8 +363,16 @@ export class OpenContent__idToNewBlogPostResult {
     return this.value5;
   }
 
-  getOwner(): Address {
+  getAuthorName(): string {
     return this.value6;
+  }
+
+  getAuthorThumbnail(): string {
+    return this.value7;
+  }
+
+  getOwner(): Address {
+    return this.value8;
   }
 }
 
@@ -329,7 +385,9 @@ export class OpenContent__idToNewVlogPostResult {
   value5: string;
   value6: string;
   value7: string;
-  value8: Address;
+  value8: string;
+  value9: string;
+  value10: Address;
 
   constructor(
     value0: string,
@@ -340,7 +398,9 @@ export class OpenContent__idToNewVlogPostResult {
     value5: string,
     value6: string,
     value7: string,
-    value8: Address
+    value8: string,
+    value9: string,
+    value10: Address
   ) {
     this.value0 = value0;
     this.value1 = value1;
@@ -351,6 +411,8 @@ export class OpenContent__idToNewVlogPostResult {
     this.value6 = value6;
     this.value7 = value7;
     this.value8 = value8;
+    this.value9 = value9;
+    this.value10 = value10;
   }
 
   toMap(): TypedMap<string, ethereum.Value> {
@@ -363,7 +425,9 @@ export class OpenContent__idToNewVlogPostResult {
     map.set("value5", ethereum.Value.fromString(this.value5));
     map.set("value6", ethereum.Value.fromString(this.value6));
     map.set("value7", ethereum.Value.fromString(this.value7));
-    map.set("value8", ethereum.Value.fromAddress(this.value8));
+    map.set("value8", ethereum.Value.fromString(this.value8));
+    map.set("value9", ethereum.Value.fromString(this.value9));
+    map.set("value10", ethereum.Value.fromAddress(this.value10));
     return map;
   }
 
@@ -399,8 +463,16 @@ export class OpenContent__idToNewVlogPostResult {
     return this.value7;
   }
 
-  getOwner(): Address {
+  getAuthorName(): string {
     return this.value8;
+  }
+
+  getAuthorThumbnail(): string {
+    return this.value9;
+  }
+
+  getOwner(): Address {
+    return this.value10;
   }
 }
 
@@ -412,7 +484,7 @@ export class OpenContent extends ethereum.SmartContract {
   idToNewAudioPost(param0: Bytes): OpenContent__idToNewAudioPostResult {
     let result = super.call(
       "idToNewAudioPost",
-      "idToNewAudioPost(bytes32):(bytes32,string,string,string,string,string,string,string,string,address)",
+      "idToNewAudioPost(bytes32):(bytes32,string,string,string,string,string,string,string,string,string,string,address)",
       [ethereum.Value.fromFixedBytes(param0)]
     );
 
@@ -426,7 +498,9 @@ export class OpenContent extends ethereum.SmartContract {
       result[6].toString(),
       result[7].toString(),
       result[8].toString(),
-      result[9].toAddress()
+      result[9].toString(),
+      result[10].toString(),
+      result[11].toAddress()
     );
   }
 
@@ -435,7 +509,7 @@ export class OpenContent extends ethereum.SmartContract {
   ): ethereum.CallResult<OpenContent__idToNewAudioPostResult> {
     let result = super.tryCall(
       "idToNewAudioPost",
-      "idToNewAudioPost(bytes32):(bytes32,string,string,string,string,string,string,string,string,address)",
+      "idToNewAudioPost(bytes32):(bytes32,string,string,string,string,string,string,string,string,string,string,address)",
       [ethereum.Value.fromFixedBytes(param0)]
     );
     if (result.reverted) {
@@ -453,7 +527,9 @@ export class OpenContent extends ethereum.SmartContract {
         value[6].toString(),
         value[7].toString(),
         value[8].toString(),
-        value[9].toAddress()
+        value[9].toString(),
+        value[10].toString(),
+        value[11].toAddress()
       )
     );
   }
@@ -461,7 +537,7 @@ export class OpenContent extends ethereum.SmartContract {
   idToNewBlogPost(param0: Bytes): OpenContent__idToNewBlogPostResult {
     let result = super.call(
       "idToNewBlogPost",
-      "idToNewBlogPost(bytes32):(bytes32,string,string,string,string,string,address)",
+      "idToNewBlogPost(bytes32):(bytes32,string,string,string,string,string,string,string,address)",
       [ethereum.Value.fromFixedBytes(param0)]
     );
 
@@ -472,7 +548,9 @@ export class OpenContent extends ethereum.SmartContract {
       result[3].toString(),
       result[4].toString(),
       result[5].toString(),
-      result[6].toAddress()
+      result[6].toString(),
+      result[7].toString(),
+      result[8].toAddress()
     );
   }
 
@@ -481,7 +559,7 @@ export class OpenContent extends ethereum.SmartContract {
   ): ethereum.CallResult<OpenContent__idToNewBlogPostResult> {
     let result = super.tryCall(
       "idToNewBlogPost",
-      "idToNewBlogPost(bytes32):(bytes32,string,string,string,string,string,address)",
+      "idToNewBlogPost(bytes32):(bytes32,string,string,string,string,string,string,string,address)",
       [ethereum.Value.fromFixedBytes(param0)]
     );
     if (result.reverted) {
@@ -496,7 +574,9 @@ export class OpenContent extends ethereum.SmartContract {
         value[3].toString(),
         value[4].toString(),
         value[5].toString(),
-        value[6].toAddress()
+        value[6].toString(),
+        value[7].toString(),
+        value[8].toAddress()
       )
     );
   }
@@ -504,7 +584,7 @@ export class OpenContent extends ethereum.SmartContract {
   idToNewVlogPost(param0: Bytes): OpenContent__idToNewVlogPostResult {
     let result = super.call(
       "idToNewVlogPost",
-      "idToNewVlogPost(bytes32):(string,string,string,string,string,string,string,string,address)",
+      "idToNewVlogPost(bytes32):(string,string,string,string,string,string,string,string,string,string,address)",
       [ethereum.Value.fromFixedBytes(param0)]
     );
 
@@ -517,7 +597,9 @@ export class OpenContent extends ethereum.SmartContract {
       result[5].toString(),
       result[6].toString(),
       result[7].toString(),
-      result[8].toAddress()
+      result[8].toString(),
+      result[9].toString(),
+      result[10].toAddress()
     );
   }
 
@@ -526,7 +608,7 @@ export class OpenContent extends ethereum.SmartContract {
   ): ethereum.CallResult<OpenContent__idToNewVlogPostResult> {
     let result = super.tryCall(
       "idToNewVlogPost",
-      "idToNewVlogPost(bytes32):(string,string,string,string,string,string,string,string,address)",
+      "idToNewVlogPost(bytes32):(string,string,string,string,string,string,string,string,string,string,address)",
       [ethereum.Value.fromFixedBytes(param0)]
     );
     if (result.reverted) {
@@ -543,54 +625,10 @@ export class OpenContent extends ethereum.SmartContract {
         value[5].toString(),
         value[6].toString(),
         value[7].toString(),
-        value[8].toAddress()
+        value[8].toString(),
+        value[9].toString(),
+        value[10].toAddress()
       )
     );
-  }
-}
-
-export class CreateNewBlogPostCall extends ethereum.Call {
-  get inputs(): CreateNewBlogPostCall__Inputs {
-    return new CreateNewBlogPostCall__Inputs(this);
-  }
-
-  get outputs(): CreateNewBlogPostCall__Outputs {
-    return new CreateNewBlogPostCall__Outputs(this);
-  }
-}
-
-export class CreateNewBlogPostCall__Inputs {
-  _call: CreateNewBlogPostCall;
-
-  constructor(call: CreateNewBlogPostCall) {
-    this._call = call;
-  }
-
-  get nameOfPost(): string {
-    return this._call.inputValues[0].value.toString();
-  }
-
-  get postDescription(): string {
-    return this._call.inputValues[1].value.toString();
-  }
-
-  get thumbnailUrl(): string {
-    return this._call.inputValues[2].value.toString();
-  }
-
-  get postContent(): string {
-    return this._call.inputValues[3].value.toString();
-  }
-
-  get date(): string {
-    return this._call.inputValues[4].value.toString();
-  }
-}
-
-export class CreateNewBlogPostCall__Outputs {
-  _call: CreateNewBlogPostCall;
-
-  constructor(call: CreateNewBlogPostCall) {
-    this._call = call;
   }
 }

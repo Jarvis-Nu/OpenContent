@@ -13,6 +13,8 @@ contract OpenContent {
         string audioTitle,
         string audioUrl,
         string audioThumbnail,
+        string authorName,
+        string authorThumbnail,
         address owner
     );
 
@@ -23,6 +25,8 @@ contract OpenContent {
         string thumbnailUrl,
         string postContent,
         string date,
+        string authorName,
+        string authorThumbnail,
         address owner
     );
 
@@ -36,6 +40,8 @@ contract OpenContent {
         string videoTitle,
         string videoUrl,
         string videoThumbnail,
+        string authorName,
+        string authorThumbnail,
         address owner
     );
 
@@ -49,6 +55,8 @@ contract OpenContent {
         string audioTitle;
         string audioUrl;
         string audioThumbnail;
+        string authorName;
+        string authorThumbnail;
         address owner;
     }
 
@@ -59,6 +67,8 @@ contract OpenContent {
         string thumbnailUrl;
         string postContent;
         string date;
+        string authorName;
+        string authorThumbnail;
         address owner;
     }
 
@@ -71,6 +81,8 @@ contract OpenContent {
         string videoTitle;
         string videoUrl;
         string videoThumbnail;
+        string authorName;
+        string authorThumbnail;
         address owner;
     }
 
@@ -84,6 +96,8 @@ contract OpenContent {
         string calldata thumbnailUrl,
         string calldata postContent,
         string calldata date,
+        string calldata authorName,
+        string calldata authorThumbnail,
         string calldata audioTitle,
         string calldata audioUrl,
         string calldata audioThumbnail
@@ -110,10 +124,12 @@ contract OpenContent {
             audioTitle,
             audioUrl,
             audioThumbnail,
+            authorName,
+            authorThumbnail,
             msg.sender
         );
 
-        emit AudioPost(postId, nameOfPost, postDescription, thumbnailUrl, postContent, date, audioTitle, audioUrl, audioThumbnail, msg.sender);
+        emit AudioPost(postId, nameOfPost, postDescription, thumbnailUrl, postContent, date, audioTitle, audioUrl, audioThumbnail, authorName, authorThumbnail, msg.sender);
     }
 
     function createNewBlogPost(
@@ -121,8 +137,10 @@ contract OpenContent {
         string calldata postDescription,
         string calldata thumbnailUrl,
         string calldata postContent,
+        string calldata authorName,
+        string calldata authorThumbnail,
         string calldata date
-    ) external {
+    ) internal {
         bytes32 postId = keccak256(
             abi.encodePacked(
                 msg.sender,
@@ -142,10 +160,12 @@ contract OpenContent {
             thumbnailUrl,
             postContent,
             date,
+            authorName,
+            authorThumbnail,
             msg.sender
         );
 
-        emit BlogPost(postId, nameOfPost, postDescription, thumbnailUrl, postContent, date, msg.sender);
+        emit BlogPost(postId, nameOfPost, postDescription, thumbnailUrl, postContent, date, authorName, authorThumbnail, msg.sender);
     }
 
     function createNewVlogPost(
@@ -156,7 +176,9 @@ contract OpenContent {
         string calldata date,
         string calldata videoTitle,
         string calldata videoUrl,
-        string calldata videoThumbnail
+        string calldata videoThumbnail,
+        string calldata authorName,
+        string calldata authorThumbnail
     ) internal {
         bytes32 postId = keccak256(
             abi.encodePacked(
@@ -179,10 +201,12 @@ contract OpenContent {
             videoTitle,
             videoUrl,
             videoThumbnail,
+            authorName,
+            authorThumbnail,
             msg.sender
         );
 
-        emit VlogPost(postId, nameOfPost, postDescription, thumbnailUrl, postContent, date, videoTitle, videoUrl, videoThumbnail, msg.sender);
+        emit VlogPost(postId, nameOfPost, postDescription, thumbnailUrl, postContent, date, videoTitle, videoUrl, videoThumbnail, authorName, authorThumbnail, msg.sender);
     }
 
 }

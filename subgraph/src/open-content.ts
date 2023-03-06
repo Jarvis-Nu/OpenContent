@@ -18,6 +18,8 @@ export function handleAudioPost(event: AudioPostEvent): void {
   entity.audioTitle = event.params.audioTitle
   entity.audioUrl = event.params.audioUrl
   entity.audioThumbnail = event.params.audioThumbnail
+  entity.authorName = event.params.authorName
+  entity.authorThumbnail = event.params.authorThumbnail
   entity.owner = event.params.owner
 
   entity.blockNumber = event.block.number
@@ -37,6 +39,8 @@ export function handleBlogPost(event: BlogPostEvent): void {
   entity.thumbnailUrl = event.params.thumbnailUrl
   entity.postContent = event.params.postContent
   entity.date = event.params.date
+  entity.authorName = event.params.authorName
+  entity.authorThumbnail = event.params.authorThumbnail
   entity.owner = event.params.owner
 
   entity.blockNumber = event.block.number
@@ -59,6 +63,8 @@ export function handleVlogPost(event: VlogPostEvent): void {
   entity.videoTitle = event.params.videoTitle
   entity.videoUrl = event.params.videoUrl
   entity.videoThumbnail = event.params.videoThumbnail
+  entity.authorName = event.params.authorName
+  entity.authorThumbnail = event.params.authorThumbnail
   entity.owner = event.params.owner
 
   entity.blockNumber = event.block.number

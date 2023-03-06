@@ -125,6 +125,24 @@ export class AudioPost extends Entity {
     this.set("audioThumbnail", Value.fromString(value));
   }
 
+  get authorName(): string {
+    let value = this.get("authorName");
+    return value!.toString();
+  }
+
+  set authorName(value: string) {
+    this.set("authorName", Value.fromString(value));
+  }
+
+  get authorThumbnail(): string {
+    let value = this.get("authorThumbnail");
+    return value!.toString();
+  }
+
+  set authorThumbnail(value: string) {
+    this.set("authorThumbnail", Value.fromString(value));
+  }
+
   get owner(): Bytes {
     let value = this.get("owner");
     return value!.toBytes();
@@ -245,6 +263,24 @@ export class BlogPost extends Entity {
 
   set date(value: string) {
     this.set("date", Value.fromString(value));
+  }
+
+  get authorName(): string {
+    let value = this.get("authorName");
+    return value!.toString();
+  }
+
+  set authorName(value: string) {
+    this.set("authorName", Value.fromString(value));
+  }
+
+  get authorThumbnail(): string {
+    let value = this.get("authorThumbnail");
+    return value!.toString();
+  }
+
+  set authorThumbnail(value: string) {
+    this.set("authorThumbnail", Value.fromString(value));
   }
 
   get owner(): Bytes {
@@ -394,6 +430,24 @@ export class VlogPost extends Entity {
 
   set videoThumbnail(value: string) {
     this.set("videoThumbnail", Value.fromString(value));
+  }
+
+  get authorName(): string {
+    let value = this.get("authorName");
+    return value!.toString();
+  }
+
+  set authorName(value: string) {
+    this.set("authorName", Value.fromString(value));
+  }
+
+  get authorThumbnail(): string {
+    let value = this.get("authorThumbnail");
+    return value!.toString();
+  }
+
+  set authorThumbnail(value: string) {
+    this.set("authorThumbnail", Value.fromString(value));
   }
 
   get owner(): Bytes {

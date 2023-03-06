@@ -9,6 +9,8 @@ type AudioPost @entity(immutable: true) {
   audioTitle: String! # string
   audioUrl: String! # string
   audioThumbnail: String! # string
+  authorName: String! # string
+  authorThumbnail: String! # string
   owner: Bytes! # address
   blockNumber: BigInt!
   blockTimestamp: BigInt!
@@ -23,6 +25,8 @@ type BlogPost @entity(immutable: true) {
   thumbnailUrl: String! # string
   postContent: String! # string
   date: String! # string
+  authorName: String! # string
+  authorThumbnail: String! # string
   owner: Bytes! # address
   blockNumber: BigInt!
   blockTimestamp: BigInt!
@@ -40,6 +44,8 @@ type VlogPost @entity(immutable: true) {
   videoTitle: String! # string
   videoUrl: String! # string
   videoThumbnail: String! # string
+  authorName: String! # string
+  authorThumbnail: String! # string
   owner: Bytes! # address
   blockNumber: BigInt!
   blockTimestamp: BigInt!
