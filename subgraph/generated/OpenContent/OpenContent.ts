@@ -377,7 +377,7 @@ export class OpenContent__idToNewBlogPostResult {
 }
 
 export class OpenContent__idToNewVlogPostResult {
-  value0: string;
+  value0: Bytes;
   value1: string;
   value2: string;
   value3: string;
@@ -387,10 +387,11 @@ export class OpenContent__idToNewVlogPostResult {
   value7: string;
   value8: string;
   value9: string;
-  value10: Address;
+  value10: string;
+  value11: Address;
 
   constructor(
-    value0: string,
+    value0: Bytes,
     value1: string,
     value2: string,
     value3: string,
@@ -400,7 +401,8 @@ export class OpenContent__idToNewVlogPostResult {
     value7: string,
     value8: string,
     value9: string,
-    value10: Address
+    value10: string,
+    value11: Address
   ) {
     this.value0 = value0;
     this.value1 = value1;
@@ -413,11 +415,12 @@ export class OpenContent__idToNewVlogPostResult {
     this.value8 = value8;
     this.value9 = value9;
     this.value10 = value10;
+    this.value11 = value11;
   }
 
   toMap(): TypedMap<string, ethereum.Value> {
     let map = new TypedMap<string, ethereum.Value>();
-    map.set("value0", ethereum.Value.fromString(this.value0));
+    map.set("value0", ethereum.Value.fromFixedBytes(this.value0));
     map.set("value1", ethereum.Value.fromString(this.value1));
     map.set("value2", ethereum.Value.fromString(this.value2));
     map.set("value3", ethereum.Value.fromString(this.value3));
@@ -427,52 +430,57 @@ export class OpenContent__idToNewVlogPostResult {
     map.set("value7", ethereum.Value.fromString(this.value7));
     map.set("value8", ethereum.Value.fromString(this.value8));
     map.set("value9", ethereum.Value.fromString(this.value9));
-    map.set("value10", ethereum.Value.fromAddress(this.value10));
+    map.set("value10", ethereum.Value.fromString(this.value10));
+    map.set("value11", ethereum.Value.fromAddress(this.value11));
     return map;
   }
 
-  getNameOfPost(): string {
+  getPostId(): Bytes {
     return this.value0;
   }
 
-  getPostDescription(): string {
+  getNameOfPost(): string {
     return this.value1;
   }
 
-  getThumbnailUrl(): string {
+  getPostDescription(): string {
     return this.value2;
   }
 
-  getPostContent(): string {
+  getThumbnailUrl(): string {
     return this.value3;
   }
 
-  getDate(): string {
+  getPostContent(): string {
     return this.value4;
   }
 
-  getVideoTitle(): string {
+  getDate(): string {
     return this.value5;
   }
 
-  getVideoUrl(): string {
+  getVideoTitle(): string {
     return this.value6;
   }
 
-  getVideoThumbnail(): string {
+  getVideoUrl(): string {
     return this.value7;
   }
 
-  getAuthorName(): string {
+  getVideoThumbnail(): string {
     return this.value8;
   }
 
-  getAuthorThumbnail(): string {
+  getAuthorName(): string {
     return this.value9;
   }
 
-  getOwner(): Address {
+  getAuthorThumbnail(): string {
     return this.value10;
+  }
+
+  getOwner(): Address {
+    return this.value11;
   }
 }
 
@@ -584,12 +592,12 @@ export class OpenContent extends ethereum.SmartContract {
   idToNewVlogPost(param0: Bytes): OpenContent__idToNewVlogPostResult {
     let result = super.call(
       "idToNewVlogPost",
-      "idToNewVlogPost(bytes32):(string,string,string,string,string,string,string,string,string,string,address)",
+      "idToNewVlogPost(bytes32):(bytes32,string,string,string,string,string,string,string,string,string,string,address)",
       [ethereum.Value.fromFixedBytes(param0)]
     );
 
     return new OpenContent__idToNewVlogPostResult(
-      result[0].toString(),
+      result[0].toBytes(),
       result[1].toString(),
       result[2].toString(),
       result[3].toString(),
@@ -599,7 +607,8 @@ export class OpenContent extends ethereum.SmartContract {
       result[7].toString(),
       result[8].toString(),
       result[9].toString(),
-      result[10].toAddress()
+      result[10].toString(),
+      result[11].toAddress()
     );
   }
 
@@ -608,7 +617,7 @@ export class OpenContent extends ethereum.SmartContract {
   ): ethereum.CallResult<OpenContent__idToNewVlogPostResult> {
     let result = super.tryCall(
       "idToNewVlogPost",
-      "idToNewVlogPost(bytes32):(string,string,string,string,string,string,string,string,string,string,address)",
+      "idToNewVlogPost(bytes32):(bytes32,string,string,string,string,string,string,string,string,string,string,address)",
       [ethereum.Value.fromFixedBytes(param0)]
     );
     if (result.reverted) {
@@ -617,7 +626,7 @@ export class OpenContent extends ethereum.SmartContract {
     let value = result.value;
     return ethereum.CallResult.fromValue(
       new OpenContent__idToNewVlogPostResult(
-        value[0].toString(),
+        value[0].toBytes(),
         value[1].toString(),
         value[2].toString(),
         value[3].toString(),
@@ -627,8 +636,219 @@ export class OpenContent extends ethereum.SmartContract {
         value[7].toString(),
         value[8].toString(),
         value[9].toString(),
-        value[10].toAddress()
+        value[10].toString(),
+        value[11].toAddress()
       )
     );
+  }
+}
+
+export class CreateNewAudioPostCall extends ethereum.Call {
+  get inputs(): CreateNewAudioPostCall__Inputs {
+    return new CreateNewAudioPostCall__Inputs(this);
+  }
+
+  get outputs(): CreateNewAudioPostCall__Outputs {
+    return new CreateNewAudioPostCall__Outputs(this);
+  }
+}
+
+export class CreateNewAudioPostCall__Inputs {
+  _call: CreateNewAudioPostCall;
+
+  constructor(call: CreateNewAudioPostCall) {
+    this._call = call;
+  }
+
+  get data(): CreateNewAudioPostCallDataStruct {
+    return changetype<CreateNewAudioPostCallDataStruct>(
+      this._call.inputValues[0].value.toTuple()
+    );
+  }
+}
+
+export class CreateNewAudioPostCall__Outputs {
+  _call: CreateNewAudioPostCall;
+
+  constructor(call: CreateNewAudioPostCall) {
+    this._call = call;
+  }
+}
+
+export class CreateNewAudioPostCallDataStruct extends ethereum.Tuple {
+  get nameOfPost(): string {
+    return this[0].toString();
+  }
+
+  get postDescription(): string {
+    return this[1].toString();
+  }
+
+  get thumbnailUrl(): string {
+    return this[2].toString();
+  }
+
+  get postContent(): string {
+    return this[3].toString();
+  }
+
+  get date(): string {
+    return this[4].toString();
+  }
+
+  get audioTitle(): string {
+    return this[5].toString();
+  }
+
+  get audioUrl(): string {
+    return this[6].toString();
+  }
+
+  get audioThumbnail(): string {
+    return this[7].toString();
+  }
+
+  get authorName(): string {
+    return this[8].toString();
+  }
+
+  get authorThumbnail(): string {
+    return this[9].toString();
+  }
+}
+
+export class CreateNewBlogPostCall extends ethereum.Call {
+  get inputs(): CreateNewBlogPostCall__Inputs {
+    return new CreateNewBlogPostCall__Inputs(this);
+  }
+
+  get outputs(): CreateNewBlogPostCall__Outputs {
+    return new CreateNewBlogPostCall__Outputs(this);
+  }
+}
+
+export class CreateNewBlogPostCall__Inputs {
+  _call: CreateNewBlogPostCall;
+
+  constructor(call: CreateNewBlogPostCall) {
+    this._call = call;
+  }
+
+  get data(): CreateNewBlogPostCallDataStruct {
+    return changetype<CreateNewBlogPostCallDataStruct>(
+      this._call.inputValues[0].value.toTuple()
+    );
+  }
+}
+
+export class CreateNewBlogPostCall__Outputs {
+  _call: CreateNewBlogPostCall;
+
+  constructor(call: CreateNewBlogPostCall) {
+    this._call = call;
+  }
+}
+
+export class CreateNewBlogPostCallDataStruct extends ethereum.Tuple {
+  get nameOfPost(): string {
+    return this[0].toString();
+  }
+
+  get postDescription(): string {
+    return this[1].toString();
+  }
+
+  get thumbnailUrl(): string {
+    return this[2].toString();
+  }
+
+  get postContent(): string {
+    return this[3].toString();
+  }
+
+  get authorName(): string {
+    return this[4].toString();
+  }
+
+  get authorThumbnail(): string {
+    return this[5].toString();
+  }
+
+  get date(): string {
+    return this[6].toString();
+  }
+}
+
+export class CreateNewVlogPostCall extends ethereum.Call {
+  get inputs(): CreateNewVlogPostCall__Inputs {
+    return new CreateNewVlogPostCall__Inputs(this);
+  }
+
+  get outputs(): CreateNewVlogPostCall__Outputs {
+    return new CreateNewVlogPostCall__Outputs(this);
+  }
+}
+
+export class CreateNewVlogPostCall__Inputs {
+  _call: CreateNewVlogPostCall;
+
+  constructor(call: CreateNewVlogPostCall) {
+    this._call = call;
+  }
+
+  get data(): CreateNewVlogPostCallDataStruct {
+    return changetype<CreateNewVlogPostCallDataStruct>(
+      this._call.inputValues[0].value.toTuple()
+    );
+  }
+}
+
+export class CreateNewVlogPostCall__Outputs {
+  _call: CreateNewVlogPostCall;
+
+  constructor(call: CreateNewVlogPostCall) {
+    this._call = call;
+  }
+}
+
+export class CreateNewVlogPostCallDataStruct extends ethereum.Tuple {
+  get nameOfPost(): string {
+    return this[0].toString();
+  }
+
+  get postDescription(): string {
+    return this[1].toString();
+  }
+
+  get thumbnailUrl(): string {
+    return this[2].toString();
+  }
+
+  get postContent(): string {
+    return this[3].toString();
+  }
+
+  get date(): string {
+    return this[4].toString();
+  }
+
+  get videoTitle(): string {
+    return this[5].toString();
+  }
+
+  get videoUrl(): string {
+    return this[6].toString();
+  }
+
+  get videoThumbnail(): string {
+    return this[7].toString();
+  }
+
+  get authorName(): string {
+    return this[8].toString();
+  }
+
+  get authorThumbnail(): string {
+    return this[9].toString();
   }
 }

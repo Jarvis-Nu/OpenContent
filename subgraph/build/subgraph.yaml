@@ -6,9 +6,9 @@ dataSources:
     name: OpenContent
     network: mumbai
     source:
-      address: "0x76EBcB256E4bAA92360810a545e15F92a109eFb9"
+      address: "0x454cA52d12B0B6019A7E4a8c0197e69b7Da653A0"
       abi: OpenContent
-      startBlock: 32755513
+      startBlock: 32758388
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7

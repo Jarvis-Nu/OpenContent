@@ -221,6 +221,186 @@
   {
     "inputs": [
       {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "nameOfPost",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "postDescription",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "thumbnailUrl",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "postContent",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "date",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "audioTitle",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "audioUrl",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "audioThumbnail",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "authorName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "authorThumbnail",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct OpenContent.AudioStruct",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "name": "createNewAudioPost",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "nameOfPost",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "postDescription",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "thumbnailUrl",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "postContent",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "authorName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "authorThumbnail",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "date",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct OpenContent.BlogStuct",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "name": "createNewBlogPost",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "nameOfPost",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "postDescription",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "thumbnailUrl",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "postContent",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "date",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "videoTitle",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "videoUrl",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "videoThumbnail",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "authorName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "authorThumbnail",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct OpenContent.VlogStruct",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "name": "createNewVlogPost",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "bytes32",
         "name": "",
         "type": "bytes32"
@@ -361,6 +541,11 @@
     ],
     "name": "idToNewVlogPost",
     "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "postId",
+        "type": "bytes32"
+      },
       {
         "internalType": "string",
         "name": "nameOfPost",

@@ -2,14 +2,15 @@ import contractAbi from "./OpenContent.json"
 import { ethers } from "ethers"
 
 function connectContract() {
-    const contractAddress = "0x934C58569974Ea91FFa62cCB0634FdD37faF991D"
+    const contractAddress = "0x454cA52d12B0B6019A7E4a8c0197e69b7Da653A0"
     let web3cmsContract
     try {
         const { ethereum } = window
+        const { abi } = contractAbi
         if (ethereum) {
             const provider = new ethers.providers.Web3Provider(ethereum)
             const signer = provider.getSigner()
-            web3cmsContract = new ethers.Contract(contractAddress, contractAbi, signer)
+            web3cmsContract = new ethers.Contract(contractAddress, abi, signer)
         }
         else {
             console.log("Ethereum object does not exist")
