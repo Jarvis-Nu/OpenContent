@@ -1,7 +1,6 @@
 import { gql } from "@apollo/client";
 import Head from "next/head";
 import client from "../../apollo-client"
-import Contact from "../../components/Contact";
 import dynamic from "next/dynamic";
 import 'react-quill/dist/quill.bubble.css';
 
@@ -30,7 +29,6 @@ export default function Preview({ post, id }) {
                     />
                 </div>
             </div>
-            <Contact />
         </div>
     )
 }
