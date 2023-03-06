@@ -2,7 +2,7 @@ import contractAbi from "./OpenContent.json"
 import { ethers } from "ethers"
 
 function connectContract() {
-    const contractAddress = "0x454cA52d12B0B6019A7E4a8c0197e69b7Da653A0"
+    const contractAddress = "0xC7c2b3448150769802DA9D21f39a0934fDBbE386"
     let web3cmsContract
     try {
         const { ethereum } = window

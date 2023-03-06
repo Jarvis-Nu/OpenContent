@@ -1,10 +1,9 @@
 import '../styles/globals.css';
 import '@rainbow-me/rainbowkit/styles.css';
-import { darkTheme, getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
+import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
 import { polygonMumbai } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
-import { RecoilRoot } from 'recoil';
 
 const { chains, provider, webSocketProvider } = configureChains(
   [
@@ -28,16 +27,8 @@ const wagmiClient = createClient({
 function MyApp({ Component, pageProps }) {
   return (
     <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider chains={chains} theme={darkTheme({
-        accentColor: '#000000',
-        accentColorForeground: 'white',
-        borderRadius: 'small',
-        fontStack: 'system',
-        overlayBlur: 'small',
-      })}>
-        <RecoilRoot>
-          <Component {...pageProps} />
-        </RecoilRoot>
+      <RainbowKitProvider chains={chains}>
+        <Component {...pageProps} />
       </RainbowKitProvider>
     </WagmiConfig>
   );

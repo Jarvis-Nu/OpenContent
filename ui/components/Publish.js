@@ -2,6 +2,7 @@ import { useRecoilValue } from "recoil"
 import { Web3Storage } from "web3.storage"
 import { name, description, thumbnail, thumbnailName, thumbnailType, content, reFetch } from "../atoms/contentAtom"
 import connectContract from "../utils/connectContract"
+import { ethers } from "ethers"
 
 export default function Publish() {
     const contentName = useRecoilValue(name)
@@ -22,12 +23,27 @@ export default function Publish() {
         if (thumbNailName != null && contentThumbnail != null && thumbnailType != null) {
             let cid = await uploadThumbnail()
             let url = "https://"+cid+".ipfs.w3s.link/"+thumbNailName
-            if (cid) {
-                try {
-                    let date = new Date()
-                    if (web3cmsContract) {
-                        document.getElementById("publish").innerHTML = "Publishing..."
-                        const txn = await web3cmsContract.createNewBlogPost((contentName, contentDescription, url, cmsContent, "Author Name", "Author Thumbnail", date.toLocaleDateString()))
+            const date = new Date()
+            const BlogStuct = {
+                nameOfPost: contentName,
+                postDescription: contentDescription,
+                thumbnailUrl: url,
+                postContent: cmsContent,
+                authorName: "Victor Omorogbe",
+                authorThumbnail: url,
+                date: date.toLocaleDateString()
+            }
+            const encoded = ethers.utils.defaultAbiCoder.encode(
+                ["string", "string", "string", "string", "string","string", "string"],
+                [BlogStuct.nameOfPost, BlogStuct.postDescription, BlogStuct.thumbnailUrl, BlogStuct.postContent,
+                BlogStuct.authorName, BlogStuct.authorThumbnail, BlogStuct.date]
+            )
+            try {
+                if (web3cmsContract) {
+                    document.getElementById("publish").innerHTML = "Publishing..."
+                    const txn = await web3cmsContract.createNewBlogPost([contentName, contentDescription, url, cmsContent, date.toLocaleDateString(), "Victor Omorogbe", url])
+                    if (txn) {
+                        console.log(txn)
                         let wait = txn.wait()
                         if (wait) {
                             setTimeout(() => {
@@ -41,36 +57,12 @@ export default function Publish() {
                             document.getElementById("publish").innerHTML = "Publish"
                         }
                     }
-                } catch (error) {
-                    document.getElementById("publish").innerHTML = "Publish"
-                    console.log(error)
-                }
-            }
-            else {
-                document.getElementById("publish").innerHTML = "Publish"
-            }
-        }
-        else {
-            try {
-                let date = new Date()
-                if (web3cmsContract) {
-                    document.getElementById("publish").innerHTML = "Publishing..."
-                    const txn = await web3cmsContract.createNewBlogPost(contentName, contentDescription, "", cmsContent, "Author Name", "Author Thumbnail", date.toLocaleDateString())
-                    let wait = txn.wait()
-                    if (wait) {
-                        setTimeout(() => {
-                            document.getElementById("publish").innerHTML = "Published!"
-                            setTimeout(() => {
-                                window.location.href = "/"
-                            }, 10000);
-                        }, 10000);
-                    }
                     else {
-                        document.getElementById("publish").innerHTML = "Publish Post"
+                        console.log(txn)
                     }
                 }
             } catch (error) {
-                document.getElementById("publish").innerHTML = "Publish Post"
+                document.getElementById("publish").innerHTML = "Publish"
                 console.log(error)
             }
         }

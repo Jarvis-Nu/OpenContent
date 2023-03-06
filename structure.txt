@@ -1,0 +1,42 @@
+For audio post 
+    [
+        nameOfPost,
+        postDescription,
+        thumbnailUrl,
+        postContent,
+        date,
+        audioTitle,
+        audioUrl,
+        audioThumbnail,
+        authorName,
+        authorThumbnail
+    ]
+
+    For blog post
+    [
+        nameOfPost,
+        postDescription,
+        thumbnailUrl,
+        postContent,
+        date,
+        authorName,
+        authorThumbnail
+    ]
+
+    For videoPost
+    [
+        nameOfPost,
+        postDescription,
+        thumbnailUrl,
+        postContent,
+        date,
+        videoTitle,
+        videoUrl,
+        videoThumbnail,
+        authorName,
+        authorThumbnail
+    ]
+
+0xC7c2b3448150769802DA9D21f39a0934fDBbE386
+
+32793057
