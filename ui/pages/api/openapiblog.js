@@ -7,7 +7,6 @@ async function getPosts(address) {
             query Posts {
                 blogPosts(where: { owner: "${address}"}) {
                     id
-                    postId
                     nameOfPost
                     postDescription
                     blockNumber

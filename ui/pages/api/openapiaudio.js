@@ -7,7 +7,6 @@ async function getPosts(address) {
             query Posts {
                 audioPosts(where: { owner: "${address}"}) {
                     id
-                    postId
                     nameOfPost
                     postDescription
                     audioThumbnail

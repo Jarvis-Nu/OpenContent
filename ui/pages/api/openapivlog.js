@@ -14,7 +14,6 @@ async function getPosts(address) {
                     owner
                     postContent
                     postDescription
-                    postId
                     thumbnailUrl
                     transactionHash
                     videoThumbnail
