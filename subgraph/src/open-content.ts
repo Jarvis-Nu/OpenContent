@@ -1,25 +1,24 @@
 import {
   AudioPost as AudioPostEvent,
   BlogPost as BlogPostEvent,
-  VlogPost as VlogPostEvent
+  VideoPost as VideoPostEvent
 } from "../generated/OpenContent/OpenContent"
-import { AudioPost, BlogPost, VlogPost } from "../generated/schema"
+import { AudioPost, BlogPost, VideoPost } from "../generated/schema"
 
 export function handleAudioPost(event: AudioPostEvent): void {
   let entity = new AudioPost(
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
-  entity.postId = event.params.postId
-  entity.nameOfPost = event.params.nameOfPost
-  entity.postDescription = event.params.postDescription
-  entity.thumbnailUrl = event.params.thumbnailUrl
-  entity.postContent = event.params.postContent
-  entity.date = event.params.date
-  entity.audioTitle = event.params.audioTitle
-  entity.audioUrl = event.params.audioUrl
-  entity.audioThumbnail = event.params.audioThumbnail
-  entity.authorName = event.params.authorName
-  entity.authorThumbnail = event.params.authorThumbnail
+  entity.nameOfPost = event.params.data[0]
+  entity.postDescription = event.params.data[1]
+  entity.thumbnailUrl = event.params.data[2]
+  entity.postContent = event.params.data[3]
+  entity.date = event.params.data[4]
+  entity.audioTitle = event.params.data[5]
+  entity.audioUrl = event.params.data[6]
+  entity.audioThumbnail = event.params.data[7]
+  entity.authorName = event.params.data[8]
+  entity.authorThumbnail = event.params.data[9]
   entity.owner = event.params.owner
 
   entity.blockNumber = event.block.number
@@ -33,14 +32,13 @@ export function handleBlogPost(event: BlogPostEvent): void {
   let entity = new BlogPost(
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
-  entity.postId = event.params.postId
-  entity.nameOfPost = event.params.nameOfPost
-  entity.postDescription = event.params.postDescription
-  entity.thumbnailUrl = event.params.thumbnailUrl
-  entity.postContent = event.params.postContent
-  entity.date = event.params.date
-  entity.authorName = event.params.authorName
-  entity.authorThumbnail = event.params.authorThumbnail
+  entity.nameOfPost = event.params.data[0]
+  entity.postDescription = event.params.data[1]
+  entity.thumbnailUrl = event.params.data[2]
+  entity.postContent = event.params.data[3]
+  entity.date = event.params.data[4]
+  entity.authorName = event.params.data[5]
+  entity.authorThumbnail = event.params.data[6]
   entity.owner = event.params.owner
 
   entity.blockNumber = event.block.number
@@ -50,21 +48,20 @@ export function handleBlogPost(event: BlogPostEvent): void {
   entity.save()
 }
 
-export function handleVlogPost(event: VlogPostEvent): void {
-  let entity = new VlogPost(
+export function handleVlogPost(event: VideoPostEvent): void {
+  let entity = new VideoPost(
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
-  entity.postId = event.params.postId
-  entity.nameOfPost = event.params.nameOfPost
-  entity.postDescription = event.params.postDescription
-  entity.thumbnailUrl = event.params.thumbnailUrl
-  entity.postContent = event.params.postContent
-  entity.date = event.params.date
-  entity.videoTitle = event.params.videoTitle
-  entity.videoUrl = event.params.videoUrl
-  entity.videoThumbnail = event.params.videoThumbnail
-  entity.authorName = event.params.authorName
-  entity.authorThumbnail = event.params.authorThumbnail
+  entity.nameOfPost = event.params.data[0]
+  entity.postDescription = event.params.data[1]
+  entity.thumbnailUrl = event.params.data[2]
+  entity.postContent = event.params.data[3]
+  entity.date = event.params.data[4]
+  entity.videoTitle = event.params.data[5]
+  entity.videoUrl = event.params.data[6]
+  entity.videoThumbnail = event.params.data[7]
+  entity.authorName = event.params.data[8]
+  entity.authorThumbnail = event.params.data[9]
   entity.owner = event.params.owner
 
   entity.blockNumber = event.block.number

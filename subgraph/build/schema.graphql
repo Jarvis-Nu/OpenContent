@@ -1,6 +1,5 @@
 type AudioPost @entity(immutable: true) {
   id: Bytes!
-  postId: Bytes! # bytes32
   nameOfPost: String! # string
   postDescription: String! # string
   thumbnailUrl: String! # string
@@ -19,7 +18,6 @@ type AudioPost @entity(immutable: true) {
 
 type BlogPost @entity(immutable: true) {
   id: Bytes!
-  postId: Bytes! # bytes32
   nameOfPost: String! # string
   postDescription: String! # string
   thumbnailUrl: String! # string
@@ -33,9 +31,8 @@ type BlogPost @entity(immutable: true) {
   transactionHash: Bytes!
 }
 
-type VlogPost @entity(immutable: true) {
+type VideoPost @entity(immutable: true) {
   id: Bytes!
-  postId: Bytes! # bytes32
   nameOfPost: String! # string
   postDescription: String! # string
   thumbnailUrl: String! # string

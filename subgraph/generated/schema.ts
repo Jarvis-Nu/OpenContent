@@ -44,15 +44,6 @@ export class AudioPost extends Entity {
     this.set("id", Value.fromBytes(value));
   }
 
-  get postId(): Bytes {
-    let value = this.get("postId");
-    return value!.toBytes();
-  }
-
-  set postId(value: Bytes) {
-    this.set("postId", Value.fromBytes(value));
-  }
-
   get nameOfPost(): string {
     let value = this.get("nameOfPost");
     return value!.toString();
@@ -211,15 +202,6 @@ export class BlogPost extends Entity {
     this.set("id", Value.fromBytes(value));
   }
 
-  get postId(): Bytes {
-    let value = this.get("postId");
-    return value!.toBytes();
-  }
-
-  set postId(value: Bytes) {
-    this.set("postId", Value.fromBytes(value));
-  }
-
   get nameOfPost(): string {
     let value = this.get("nameOfPost");
     return value!.toString();
@@ -320,7 +302,7 @@ export class BlogPost extends Entity {
   }
 }
 
-export class VlogPost extends Entity {
+export class VideoPost extends Entity {
   constructor(id: Bytes) {
     super();
     this.set("id", Value.fromBytes(id));
@@ -328,18 +310,20 @@ export class VlogPost extends Entity {
 
   save(): void {
     let id = this.get("id");
-    assert(id != null, "Cannot save VlogPost entity without an ID");
+    assert(id != null, "Cannot save VideoPost entity without an ID");
     if (id) {
       assert(
         id.kind == ValueKind.BYTES,
-        `Entities of type VlogPost must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type VideoPost must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("VlogPost", id.toBytes().toHexString(), this);
+      store.set("VideoPost", id.toBytes().toHexString(), this);
     }
   }
 
-  static load(id: Bytes): VlogPost | null {
-    return changetype<VlogPost | null>(store.get("VlogPost", id.toHexString()));
+  static load(id: Bytes): VideoPost | null {
+    return changetype<VideoPost | null>(
+      store.get("VideoPost", id.toHexString())
+    );
   }
 
   get id(): Bytes {
@@ -349,15 +333,6 @@ export class VlogPost extends Entity {
 
   set id(value: Bytes) {
     this.set("id", Value.fromBytes(value));
-  }
-
-  get postId(): Bytes {
-    let value = this.get("postId");
-    return value!.toBytes();
-  }
-
-  set postId(value: Bytes) {
-    this.set("postId", Value.fromBytes(value));
   }
 
   get nameOfPost(): string {

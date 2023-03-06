@@ -4,69 +4,9 @@
     "inputs": [
       {
         "indexed": false,
-        "internalType": "bytes32",
-        "name": "postId",
-        "type": "bytes32"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "nameOfPost",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "postDescription",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "thumbnailUrl",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "postContent",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "date",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "audioTitle",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "audioUrl",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "audioThumbnail",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "authorName",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "authorThumbnail",
-        "type": "string"
+        "internalType": "string[]",
+        "name": "data",
+        "type": "string[]"
       },
       {
         "indexed": false,
@@ -83,51 +23,9 @@
     "inputs": [
       {
         "indexed": false,
-        "internalType": "bytes32",
-        "name": "postId",
-        "type": "bytes32"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "nameOfPost",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "postDescription",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "thumbnailUrl",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "postContent",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "date",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "authorName",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "authorThumbnail",
-        "type": "string"
+        "internalType": "string[]",
+        "name": "data",
+        "type": "string[]"
       },
       {
         "indexed": false,
@@ -144,69 +42,9 @@
     "inputs": [
       {
         "indexed": false,
-        "internalType": "bytes32",
-        "name": "postId",
-        "type": "bytes32"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "nameOfPost",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "postDescription",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "thumbnailUrl",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "postContent",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "date",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "videoTitle",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "videoUrl",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "videoThumbnail",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "authorName",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "authorThumbnail",
-        "type": "string"
+        "internalType": "string[]",
+        "name": "data",
+        "type": "string[]"
       },
       {
         "indexed": false,
@@ -215,67 +53,15 @@
         "type": "address"
       }
     ],
-    "name": "VlogPost",
+    "name": "VideoPost",
     "type": "event"
   },
   {
     "inputs": [
       {
-        "components": [
-          {
-            "internalType": "string",
-            "name": "nameOfPost",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "postDescription",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "thumbnailUrl",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "postContent",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "date",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "audioTitle",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "audioUrl",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "audioThumbnail",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "authorName",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "authorThumbnail",
-            "type": "string"
-          }
-        ],
-        "internalType": "struct OpenContent.AudioStruct",
+        "internalType": "string[]",
         "name": "data",
-        "type": "tuple"
+        "type": "string[]"
       }
     ],
     "name": "createNewAudioPost",
@@ -286,46 +72,9 @@
   {
     "inputs": [
       {
-        "components": [
-          {
-            "internalType": "string",
-            "name": "nameOfPost",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "postDescription",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "thumbnailUrl",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "postContent",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "authorName",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "authorThumbnail",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "date",
-            "type": "string"
-          }
-        ],
-        "internalType": "struct OpenContent.BlogStuct",
+        "internalType": "string[]",
         "name": "data",
-        "type": "tuple"
+        "type": "string[]"
       }
     ],
     "name": "createNewBlogPost",
@@ -336,273 +85,14 @@
   {
     "inputs": [
       {
-        "components": [
-          {
-            "internalType": "string",
-            "name": "nameOfPost",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "postDescription",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "thumbnailUrl",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "postContent",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "date",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "videoTitle",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "videoUrl",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "videoThumbnail",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "authorName",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "authorThumbnail",
-            "type": "string"
-          }
-        ],
-        "internalType": "struct OpenContent.VlogStruct",
+        "internalType": "string[]",
         "name": "data",
-        "type": "tuple"
+        "type": "string[]"
       }
     ],
     "name": "createNewVlogPost",
     "outputs": [],
     "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "",
-        "type": "bytes32"
-      }
-    ],
-    "name": "idToNewAudioPost",
-    "outputs": [
-      {
-        "internalType": "bytes32",
-        "name": "postId",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "string",
-        "name": "nameOfPost",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "postDescription",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "thumbnailUrl",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "postContent",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "date",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "audioTitle",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "audioUrl",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "audioThumbnail",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "authorName",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "authorThumbnail",
-        "type": "string"
-      },
-      {
-        "internalType": "address",
-        "name": "owner",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "",
-        "type": "bytes32"
-      }
-    ],
-    "name": "idToNewBlogPost",
-    "outputs": [
-      {
-        "internalType": "bytes32",
-        "name": "postId",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "string",
-        "name": "nameOfPost",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "postDescription",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "thumbnailUrl",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "postContent",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "date",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "authorName",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "authorThumbnail",
-        "type": "string"
-      },
-      {
-        "internalType": "address",
-        "name": "owner",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "",
-        "type": "bytes32"
-      }
-    ],
-    "name": "idToNewVlogPost",
-    "outputs": [
-      {
-        "internalType": "bytes32",
-        "name": "postId",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "string",
-        "name": "nameOfPost",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "postDescription",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "thumbnailUrl",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "postContent",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "date",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "videoTitle",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "videoUrl",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "videoThumbnail",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "authorName",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "authorThumbnail",
-        "type": "string"
-      },
-      {
-        "internalType": "address",
-        "name": "owner",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
     "type": "function"
   }
 ]

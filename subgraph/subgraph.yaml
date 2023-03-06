@@ -6,9 +6,9 @@ dataSources:
     name: OpenContent
     network: mumbai
     source:
-      address: "0x454cA52d12B0B6019A7E4a8c0197e69b7Da653A0"
+      address: "0xC7c2b3448150769802DA9D21f39a0934fDBbE386"
       abi: OpenContent
-      startBlock: 32758388
+      startBlock: 32793057
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -16,15 +16,15 @@ dataSources:
       entities:
         - AudioPost
         - BlogPost
-        - VlogPost
+        - VideoPost
       abis:
         - name: OpenContent
           file: ./abis/OpenContent.json
       eventHandlers:
-        - event: AudioPost(bytes32,string,string,string,string,string,string,string,string,string,string,address)
+        - event: AudioPost(string[],address)
           handler: handleAudioPost
-        - event: BlogPost(bytes32,string,string,string,string,string,string,string,address)
+        - event: BlogPost(string[],address)
           handler: handleBlogPost
-        - event: VlogPost(bytes32,string,string,string,string,string,string,string,string,string,string,address)
-          handler: handleVlogPost
+        - event: VideoPost(string[],address)
+          handler: handleVideoPost
       file: ./src/open-content.ts
