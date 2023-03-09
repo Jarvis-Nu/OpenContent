@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Header from '../components/Header';
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
         <link href="/favicon.ico" rel="icon" />
       </Head>
       <main>
+        <Header />
       </main>
     </div>
   );
