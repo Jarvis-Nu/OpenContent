@@ -34,7 +34,7 @@ export default function ContentList() {
 
     getLoggedIn()
     return (
-        <div className="w-32 min-h-screen border-r-2 sm:w-72">
+        <div className="w-32 max-h-screen border-r-2 sm:w-72">
             <div>
                 <h3 className="text-xl font-semibold p-2.5 border-b-2">Content List</h3>
             </div>
