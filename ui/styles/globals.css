@@ -4,7 +4,17 @@
 
 @layer base {
 
+  @font-face {
+    font-family: "custom";
+    src: url("../public/fonts/font.ttf");
+  }
+
   html {
+    @apply font-[custom]
+  }
+
+  h3 {
+    @apply text-[32px] leading-[39px] tracking-wide
   }
 
   h5 {

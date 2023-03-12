@@ -14,7 +14,9 @@ module.exports = {
         "dark": "#161719"
       },
       textColor: {
-        "dark": "#202125"
+        "dark": "#202125",
+        "ash": "#999999",
+        "red": "#F23838"
       }
     },
   },
