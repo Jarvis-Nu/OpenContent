@@ -13,7 +13,7 @@ export default function Benefits() {
                 <div>
                     <div id="card_1" className="w-40" onMouseEnter={() => setIsFlipped1(true)} onMouseLeave={() => setIsFlipped1(false)}>
                         <ReactCardFlip isFlipped={isFlipped1} flipDirection="horizontal" flipSpeedBackToFront={1} flipSpeedFrontToBack={1}>
-                            <div className="bg-white border-2 border-dark/50 w-[275px] md:w-[300px] lg:w-[350px] min-h-[300px] rounded-md text-center hover:cursor-pointer">
+                            <div className="bg-white border-2 border-dark/50 w-[275px] sm:w-[350px] min-h-[300px] rounded-md text-center hover:cursor-pointer">
                                 <div className="w-full h-full p-4 space-y-2">
                                     <div className="flex justify-start">
                                         <div className="relative">
@@ -34,7 +34,7 @@ export default function Benefits() {
                                     </p>
                                 </div>
                             </div>
-                            <div className="bg-dark w-[275px] md:w-[300px] h-[300px] lg:w-[350px] rounded-md hover:cursor-pointer">{
+                            <div className="bg-dark w-[275px] h-[300px] sm:w-[350px] rounded-md hover:cursor-pointer">{
                                 //back design
                             }</div>
                         </ReactCardFlip>
