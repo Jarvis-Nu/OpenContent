@@ -17,6 +17,9 @@ module.exports = {
         "dark": "#202125",
         "ash": "#999999",
         "red": "#F23838"
+      },
+      borderColor: {
+        "dark": "#D9D9D9"
       }
     },
   },
