@@ -12,11 +12,11 @@ export default function Benefits() {
                 <div>
                     <h3 className="text-dark">Benefits of using OpenContent</h3>
                 </div>
-                <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-y-4 md:gap-x-4 lg:gap-y-8 xl:gap-y-0 justify-center">
+                <div className="grid justify-center md:grid-cols-2 xl:grid-cols-3 gap-y-4 md:gap-x-4 lg:gap-y-8 xl:gap-y-0">
                     <div id="card_1" onMouseEnter={() => setIsFlipped1(true)} onMouseLeave={() => setIsFlipped1(false)}>
                         <ReactCardFlip isFlipped={isFlipped1} flipDirection="horizontal" flipSpeedBackToFront={1} flipSpeedFrontToBack={1}>
                             <div className="bg-white border-2 border-dark/50 w-[275px] sm:w-[350px] md:w-[325px] lg:w-[350px]
-                             min-h-[300px] rounded-md text-center hover:cursor-pointer">
+                             min-h-[410px] rounded-md text-center hover:cursor-pointer">
                                 <div className="w-full h-full p-4 space-y-2">
                                     <div className="flex justify-start">
                                         <div className="relative">
@@ -31,13 +31,13 @@ export default function Benefits() {
                                     <h6 className="font-[450]">Free and Open-Source Content Management System</h6>
                                     <p className="text-base">
                                         OpenContent is a free and open-source content management system. 
-                                        You don't need to pay any licensing fees to use it, and it's completely 
+                                        You don{`'`}t need to pay any licensing fees to use it, and it{`'`}s completely 
                                         customizable to suit your needs. With OpenContent, you can save money 
                                         while still getting a powerful and secure CMS.
                                     </p>
                                 </div>
                             </div>
-                            <div className="bg-dark w-[275px] h-[300px] sm:w-[350px] rounded-md hover:cursor-pointer">{
+                            <div className="bg-dark w-[275px] h-[410px] sm:w-[350px] rounded-md hover:cursor-pointer">{
                                 //back design
                             }</div>
                         </ReactCardFlip>
@@ -45,7 +45,7 @@ export default function Benefits() {
                     <div id="card_2" onMouseEnter={() => setIsFlipped2(true)} onMouseLeave={() => setIsFlipped2(false)}>
                         <ReactCardFlip isFlipped={isFlipped2} flipDirection="horizontal" flipSpeedBackToFront={1} flipSpeedFrontToBack={1}>
                             <div className="bg-white border-2 border-dark/50 w-[275px] sm:w-[350px] md:w-[325px] lg:w-[350px]
-                             min-h-[300px] rounded-md text-center hover:cursor-pointer">
+                             min-h-[410px] rounded-md text-center hover:cursor-pointer">
                                 <div className="w-full h-full p-4 space-y-2">
                                     <div className="flex justify-start">
                                         <div className="relative">
@@ -57,16 +57,16 @@ export default function Benefits() {
                                             </div>
                                         </div>
                                     </div>
-                                    <h6 className="font-[450]">Free and Open-Source Content Management System</h6>
+                                    <h6 className="font-[450]">Decentralized Data Backed by Blockchain Technology</h6>
                                     <p className="text-base">
-                                        OpenContent is a free and open-source content management system. 
-                                        You don't need to pay any licensing fees to use it, and it's completely 
-                                        customizable to suit your needs. With OpenContent, you can save money 
-                                        while still getting a powerful and secure CMS.
+                                        OpenContent uses blockchain technology to store and protect your data. 
+                                        This ensures that your content is tamper-proof and secure, and eliminates 
+                                        the risk of centralized data breaches. You can enjoy the freedom and security 
+                                        of decentralization, with the added assurance of blockchain-backed data.
                                     </p>
                                 </div>
                             </div>
-                            <div className="bg-dark w-[275px] h-[300px] sm:w-[350px] rounded-md hover:cursor-pointer">{
+                            <div className="bg-dark w-[275px] h-[410px] sm:w-[350px] rounded-md hover:cursor-pointer">{
                                 //back design
                             }</div>
                         </ReactCardFlip>
@@ -74,7 +74,7 @@ export default function Benefits() {
                     <div id="card_3" onMouseEnter={() => setIsFlipped3(true)} onMouseLeave={() => setIsFlipped3(false)}>
                         <ReactCardFlip isFlipped={isFlipped3} flipDirection="horizontal" flipSpeedBackToFront={1} flipSpeedFrontToBack={1}>
                             <div className="bg-white border-2 border-dark/50 w-[275px] sm:w-[350px] md:w-[325px] lg:w-[350px]
-                             min-h-[300px] rounded-md text-center hover:cursor-pointer">
+                             min-h-[410px] rounded-md text-center hover:cursor-pointer">
                                 <div className="w-full h-full p-4 space-y-2">
                                     <div className="flex justify-start">
                                         <div className="relative">
@@ -86,16 +86,16 @@ export default function Benefits() {
                                             </div>
                                         </div>
                                     </div>
-                                    <h6 className="font-[450]">Free and Open-Source Content Management System</h6>
+                                    <h6 className="font-[450]">Prebuilt and Customizable Templates</h6>
                                     <p className="text-base">
-                                        OpenContent is a free and open-source content management system. 
-                                        You don't need to pay any licensing fees to use it, and it's completely 
-                                        customizable to suit your needs. With OpenContent, you can save money 
-                                        while still getting a powerful and secure CMS.
+                                        OpenContent comes with a variety of prebuilt templates that you can 
+                                        use to get started quickly. Whether you{`'`}re building a blog, vlog, 
+                                        podcast, or any other type of content platform, you can choose 
+                                        from a range of templates that suit your needs. 
                                     </p>
                                 </div>
                             </div>
-                            <div className="bg-dark w-[275px] h-[300px] sm:w-[350px] rounded-md hover:cursor-pointer">{
+                            <div className="bg-dark w-[275px] h-[410px] sm:w-[350px] rounded-md hover:cursor-pointer">{
                                 //back design
                             }</div>
                         </ReactCardFlip>
