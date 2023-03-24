@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 export default function Benefits() {
     return(
         <div className="text-center px-[25px] sm:px-[50px] lg:px-[100px] xl:px-0 py-4 sm:py-6 md:py-8 lg:py-10 flex justify-center">
@@ -9,18 +7,8 @@ export default function Benefits() {
                 </div>
                 <div className="grid justify-center md:grid-cols-2 xl:grid-cols-3 gap-y-4 md:gap-x-4 lg:gap-y-8 xl:gap-y-0">
                 <div className="bg-white border-2 border-dark/50 w-[275px] sm:w-[350px] md:w-[325px] lg:w-[350px]
-                             min-h-[410px] rounded-md text-center hover:cursor-pointer">
-                                <div className="w-full h-full p-4 space-y-2">
-                                    <div className="flex justify-start">
-                                        <div className="relative">
-                                            <div>
-                                                <Image src={"/log_1.png"} width={80} height={80} alt="logo" />
-                                            </div>
-                                            <div className="absolute top-6 inset-x-6">
-                                                <Image src={"/log_2.png"} width={35} height={35} alt="logo" />
-                                            </div>
-                                        </div> 
-                                    </div>
+                                h-[350px] sm:h-[300px] rounded-md text-center hover:cursor-pointer">
+                                <div className="w-full h-full p-4">
                                     <h6 className="font-[450]">Free and Open-Source Content Management System</h6>
                                     <p className="text-base">
                                         OpenContent is a free and open-source content management system. 
@@ -31,18 +19,8 @@ export default function Benefits() {
                                 </div>
                         </div>
                     <div className="bg-white border-2 border-dark/50 w-[275px] sm:w-[350px] md:w-[325px] lg:w-[350px]
-                             min-h-[410px] rounded-md text-center hover:cursor-pointer">
-                                <div className="w-full h-full p-4 space-y-2">
-                                    <div className="flex justify-start">
-                                        <div className="relative">
-                                            <div>
-                                                <Image src={"/log_1.png"} width={80} height={80} alt="logo" />
-                                            </div>
-                                            <div className="absolute top-6 inset-x-6">
-                                                <Image src={"/log_2.png"} width={35} height={35} alt="logo" />
-                                            </div>
-                                        </div>
-                                    </div>
+                             h-[400px] sm:h-[300px] rounded-md text-center hover:cursor-pointer">
+                                <div className="w-full h-full p-4">
                                     <h6 className="font-[450]">Decentralized Data Backed by Blockchain Technology</h6>
                                     <p className="text-base">
                                         OpenContent uses blockchain technology to store and protect your data. 
@@ -53,18 +31,8 @@ export default function Benefits() {
                                 </div>
                     </div>
                     <div className="bg-white border-2 border-dark/50 w-[275px] sm:w-[350px] md:w-[325px] lg:w-[350px]
-                             min-h-[410px] rounded-md text-center hover:cursor-pointer">
-                                <div className="w-full h-full p-4 space-y-2">
-                                    <div className="flex justify-start">
-                                        <div className="relative">
-                                            <div>
-                                                <Image src={"/log_1.png"} width={80} height={80} alt="logo" />
-                                            </div>
-                                            <div className="absolute top-6 inset-x-6">
-                                                <Image src={"/log_2.png"} width={35} height={35} alt="logo" />
-                                            </div>
-                                        </div>
-                                    </div>
+                             h-[350px] sm:h-[300px] rounded-md text-center hover:cursor-pointer">
+                                <div className="w-full h-full p-4">
                                     <h6 className="font-[450]">Prebuilt and Customizable Templates</h6>
                                     <p className="text-base">
                                         OpenContent comes with a variety of prebuilt templates that you can 
