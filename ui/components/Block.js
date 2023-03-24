@@ -15,8 +15,8 @@ export default function Block() {
                         <p className="text-red font-[500]">Blog templates</p>
                         <h3 className="font-semibold">Professional Blog Templates</h3>
                         <p>
-                            With OpenContent's blog templates, you can easily create a stunning and functional blog. 
-                            Whether you're a professional blogger or just starting out, our templates provide 
+                            With OpenContent{"'"}s blog templates, you can easily create a stunning and functional blog. 
+                            Whether you{"'"}re a professional blogger or just starting out, our templates provide 
                             a variety of options to suit your needs.
                             From classic blog layouts to modern designs, our templates make it easy to create a blog that stands out.
                         </p>
