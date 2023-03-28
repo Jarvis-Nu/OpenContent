@@ -1,4 +1,5 @@
 import Button from "./Button"
+import Link from "next/link"
 
 const Footer = () => {
   return (
@@ -11,10 +12,10 @@ const Footer = () => {
           </div>
           <div className='w-64 space-y-1.5'>
             <p className="text-2xl font-semibold text-dark">Products</p>
-            <p>Blog</p>
-            <p>Audio</p>
-            <p>Video</p>
-            <p>customizable</p>
+            <Link href="/"><p className="w-10 hover:cursor-pointer">Blog</p></Link>
+            <Link href="/"><p className="w-10 hover:cursor-pointer">Audio</p></Link>
+            <Link href="/"><p className="w-10 hover:cursor-pointer">Video</p></Link>
+            <Link href="/"><p className="w-10 hover:cursor-pointer">Customizable</p></Link>
           </div>
           <div className='w-64 space-y-1.5'>
             <p className="text-2xl font-semibold text-dark">Join Our WaitList</p>
