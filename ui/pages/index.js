@@ -6,6 +6,7 @@ import Sponsors from '../components/Sponsors';
 import Block from '../components/Block';
 import ReversedBlock from '../components/ReversedBlock';
 import Footer from '../components/Footer';
+import WaitList from '../components/WaitList';
 
 const Home = () => {
   return (
@@ -51,6 +52,7 @@ const Home = () => {
           `} 
           image={"/record.png"}
         />
+        <WaitList />
         <Footer />
       </main>
     </div>
