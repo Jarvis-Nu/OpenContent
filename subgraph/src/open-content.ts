@@ -1,13 +1,13 @@
 import {
   AudioPost as AudioPostEvent,
   BlogPost as BlogPostEvent,
-  VideoPost as VideoPostEvent
-} from "../generated/OpenContent/OpenContent"
-import { AudioPost, BlogPost, VideoPost } from "../generated/schema"
+  VideoPost as VideoPostEvent,
+} from '../generated/OpenContent/OpenContent'
+import { AudioPost, BlogPost, VideoPost } from '../generated/schema'
 
 export function handleAudioPost(event: AudioPostEvent): void {
   let entity = new AudioPost(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.concatI32(event.logIndex.toI32()),
   )
   entity.nameOfPost = event.params.data[0]
   entity.postDescription = event.params.data[1]
@@ -30,7 +30,7 @@ export function handleAudioPost(event: AudioPostEvent): void {
 
 export function handleBlogPost(event: BlogPostEvent): void {
   let entity = new BlogPost(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.concatI32(event.logIndex.toI32()),
   )
   entity.nameOfPost = event.params.data[0]
   entity.postDescription = event.params.data[1]
@@ -50,7 +50,7 @@ export function handleBlogPost(event: BlogPostEvent): void {
 
 export function handleVlogPost(event: VideoPostEvent): void {
   let entity = new VideoPost(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.concatI32(event.logIndex.toI32()),
   )
   entity.nameOfPost = event.params.data[0]
   entity.postDescription = event.params.data[1]

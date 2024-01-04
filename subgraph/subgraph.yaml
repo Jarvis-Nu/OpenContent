@@ -26,5 +26,5 @@ dataSources:
         - event: BlogPost(string[],address)
           handler: handleBlogPost
         - event: VideoPost(string[],address)
-          handler: handleVideoPost
+          handler: handleVlogPost
       file: ./src/open-content.ts

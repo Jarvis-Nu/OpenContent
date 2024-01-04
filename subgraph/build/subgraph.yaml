@@ -19,12 +19,12 @@ dataSources:
         - VideoPost
       abis:
         - name: OpenContent
-          file: OpenContent\abis\OpenContent.json
+          file: OpenContent/abis/OpenContent.json
       eventHandlers:
         - event: AudioPost(string[],address)
           handler: handleAudioPost
         - event: BlogPost(string[],address)
           handler: handleBlogPost
         - event: VideoPost(string[],address)
-          handler: handleVideoPost
-      file: OpenContent\OpenContent.wasm
+          handler: handleVlogPost
+      file: OpenContent/OpenContent.wasm

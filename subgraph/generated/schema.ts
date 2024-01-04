@@ -8,7 +8,7 @@ import {
   store,
   Bytes,
   BigInt,
-  BigDecimal
+  BigDecimal,
 } from "@graphprotocol/graph-ts";
 
 export class AudioPost extends Entity {
@@ -23,21 +23,31 @@ export class AudioPost extends Entity {
     if (id) {
       assert(
         id.kind == ValueKind.BYTES,
-        `Entities of type AudioPost must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type AudioPost must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`,
       );
       store.set("AudioPost", id.toBytes().toHexString(), this);
     }
   }
 
+  static loadInBlock(id: Bytes): AudioPost | null {
+    return changetype<AudioPost | null>(
+      store.get_in_block("AudioPost", id.toHexString()),
+    );
+  }
+
   static load(id: Bytes): AudioPost | null {
     return changetype<AudioPost | null>(
-      store.get("AudioPost", id.toHexString())
+      store.get("AudioPost", id.toHexString()),
     );
   }
 
   get id(): Bytes {
     let value = this.get("id");
-    return value!.toBytes();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toBytes();
+    }
   }
 
   set id(value: Bytes) {
@@ -46,7 +56,11 @@ export class AudioPost extends Entity {
 
   get nameOfPost(): string {
     let value = this.get("nameOfPost");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set nameOfPost(value: string) {
@@ -55,7 +69,11 @@ export class AudioPost extends Entity {
 
   get postDescription(): string {
     let value = this.get("postDescription");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set postDescription(value: string) {
@@ -64,7 +82,11 @@ export class AudioPost extends Entity {
 
   get thumbnailUrl(): string {
     let value = this.get("thumbnailUrl");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set thumbnailUrl(value: string) {
@@ -73,7 +95,11 @@ export class AudioPost extends Entity {
 
   get postContent(): string {
     let value = this.get("postContent");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set postContent(value: string) {
@@ -82,7 +108,11 @@ export class AudioPost extends Entity {
 
   get date(): string {
     let value = this.get("date");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set date(value: string) {
@@ -91,7 +121,11 @@ export class AudioPost extends Entity {
 
   get audioTitle(): string {
     let value = this.get("audioTitle");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set audioTitle(value: string) {
@@ -100,7 +134,11 @@ export class AudioPost extends Entity {
 
   get audioUrl(): string {
     let value = this.get("audioUrl");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set audioUrl(value: string) {
@@ -109,7 +147,11 @@ export class AudioPost extends Entity {
 
   get audioThumbnail(): string {
     let value = this.get("audioThumbnail");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set audioThumbnail(value: string) {
@@ -118,7 +160,11 @@ export class AudioPost extends Entity {
 
   get authorName(): string {
     let value = this.get("authorName");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set authorName(value: string) {
@@ -127,7 +173,11 @@ export class AudioPost extends Entity {
 
   get authorThumbnail(): string {
     let value = this.get("authorThumbnail");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set authorThumbnail(value: string) {
@@ -136,7 +186,11 @@ export class AudioPost extends Entity {
 
   get owner(): Bytes {
     let value = this.get("owner");
-    return value!.toBytes();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toBytes();
+    }
   }
 
   set owner(value: Bytes) {
@@ -145,7 +199,11 @@ export class AudioPost extends Entity {
 
   get blockNumber(): BigInt {
     let value = this.get("blockNumber");
-    return value!.toBigInt();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toBigInt();
+    }
   }
 
   set blockNumber(value: BigInt) {
@@ -154,7 +212,11 @@ export class AudioPost extends Entity {
 
   get blockTimestamp(): BigInt {
     let value = this.get("blockTimestamp");
-    return value!.toBigInt();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toBigInt();
+    }
   }
 
   set blockTimestamp(value: BigInt) {
@@ -163,7 +225,11 @@ export class AudioPost extends Entity {
 
   get transactionHash(): Bytes {
     let value = this.get("transactionHash");
-    return value!.toBytes();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toBytes();
+    }
   }
 
   set transactionHash(value: Bytes) {
@@ -183,10 +249,16 @@ export class BlogPost extends Entity {
     if (id) {
       assert(
         id.kind == ValueKind.BYTES,
-        `Entities of type BlogPost must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type BlogPost must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`,
       );
       store.set("BlogPost", id.toBytes().toHexString(), this);
     }
+  }
+
+  static loadInBlock(id: Bytes): BlogPost | null {
+    return changetype<BlogPost | null>(
+      store.get_in_block("BlogPost", id.toHexString()),
+    );
   }
 
   static load(id: Bytes): BlogPost | null {
@@ -195,7 +267,11 @@ export class BlogPost extends Entity {
 
   get id(): Bytes {
     let value = this.get("id");
-    return value!.toBytes();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toBytes();
+    }
   }
 
   set id(value: Bytes) {
@@ -204,7 +280,11 @@ export class BlogPost extends Entity {
 
   get nameOfPost(): string {
     let value = this.get("nameOfPost");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set nameOfPost(value: string) {
@@ -213,7 +293,11 @@ export class BlogPost extends Entity {
 
   get postDescription(): string {
     let value = this.get("postDescription");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set postDescription(value: string) {
@@ -222,7 +306,11 @@ export class BlogPost extends Entity {
 
   get thumbnailUrl(): string {
     let value = this.get("thumbnailUrl");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set thumbnailUrl(value: string) {
@@ -231,7 +319,11 @@ export class BlogPost extends Entity {
 
   get postContent(): string {
     let value = this.get("postContent");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set postContent(value: string) {
@@ -240,7 +332,11 @@ export class BlogPost extends Entity {
 
   get date(): string {
     let value = this.get("date");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set date(value: string) {
@@ -249,7 +345,11 @@ export class BlogPost extends Entity {
 
   get authorName(): string {
     let value = this.get("authorName");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set authorName(value: string) {
@@ -258,7 +358,11 @@ export class BlogPost extends Entity {
 
   get authorThumbnail(): string {
     let value = this.get("authorThumbnail");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set authorThumbnail(value: string) {
@@ -267,7 +371,11 @@ export class BlogPost extends Entity {
 
   get owner(): Bytes {
     let value = this.get("owner");
-    return value!.toBytes();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toBytes();
+    }
   }
 
   set owner(value: Bytes) {
@@ -276,7 +384,11 @@ export class BlogPost extends Entity {
 
   get blockNumber(): BigInt {
     let value = this.get("blockNumber");
-    return value!.toBigInt();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toBigInt();
+    }
   }
 
   set blockNumber(value: BigInt) {
@@ -285,7 +397,11 @@ export class BlogPost extends Entity {
 
   get blockTimestamp(): BigInt {
     let value = this.get("blockTimestamp");
-    return value!.toBigInt();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toBigInt();
+    }
   }
 
   set blockTimestamp(value: BigInt) {
@@ -294,7 +410,11 @@ export class BlogPost extends Entity {
 
   get transactionHash(): Bytes {
     let value = this.get("transactionHash");
-    return value!.toBytes();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toBytes();
+    }
   }
 
   set transactionHash(value: Bytes) {
@@ -314,21 +434,31 @@ export class VideoPost extends Entity {
     if (id) {
       assert(
         id.kind == ValueKind.BYTES,
-        `Entities of type VideoPost must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type VideoPost must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`,
       );
       store.set("VideoPost", id.toBytes().toHexString(), this);
     }
   }
 
+  static loadInBlock(id: Bytes): VideoPost | null {
+    return changetype<VideoPost | null>(
+      store.get_in_block("VideoPost", id.toHexString()),
+    );
+  }
+
   static load(id: Bytes): VideoPost | null {
     return changetype<VideoPost | null>(
-      store.get("VideoPost", id.toHexString())
+      store.get("VideoPost", id.toHexString()),
     );
   }
 
   get id(): Bytes {
     let value = this.get("id");
-    return value!.toBytes();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toBytes();
+    }
   }
 
   set id(value: Bytes) {
@@ -337,7 +467,11 @@ export class VideoPost extends Entity {
 
   get nameOfPost(): string {
     let value = this.get("nameOfPost");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set nameOfPost(value: string) {
@@ -346,7 +480,11 @@ export class VideoPost extends Entity {
 
   get postDescription(): string {
     let value = this.get("postDescription");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set postDescription(value: string) {
@@ -355,7 +493,11 @@ export class VideoPost extends Entity {
 
   get thumbnailUrl(): string {
     let value = this.get("thumbnailUrl");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set thumbnailUrl(value: string) {
@@ -364,7 +506,11 @@ export class VideoPost extends Entity {
 
   get postContent(): string {
     let value = this.get("postContent");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set postContent(value: string) {
@@ -373,7 +519,11 @@ export class VideoPost extends Entity {
 
   get date(): string {
     let value = this.get("date");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set date(value: string) {
@@ -382,7 +532,11 @@ export class VideoPost extends Entity {
 
   get videoTitle(): string {
     let value = this.get("videoTitle");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set videoTitle(value: string) {
@@ -391,7 +545,11 @@ export class VideoPost extends Entity {
 
   get videoUrl(): string {
     let value = this.get("videoUrl");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set videoUrl(value: string) {
@@ -400,7 +558,11 @@ export class VideoPost extends Entity {
 
   get videoThumbnail(): string {
     let value = this.get("videoThumbnail");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set videoThumbnail(value: string) {
@@ -409,7 +571,11 @@ export class VideoPost extends Entity {
 
   get authorName(): string {
     let value = this.get("authorName");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set authorName(value: string) {
@@ -418,7 +584,11 @@ export class VideoPost extends Entity {
 
   get authorThumbnail(): string {
     let value = this.get("authorThumbnail");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set authorThumbnail(value: string) {
@@ -427,7 +597,11 @@ export class VideoPost extends Entity {
 
   get owner(): Bytes {
     let value = this.get("owner");
-    return value!.toBytes();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toBytes();
+    }
   }
 
   set owner(value: Bytes) {
@@ -436,7 +610,11 @@ export class VideoPost extends Entity {
 
   get blockNumber(): BigInt {
     let value = this.get("blockNumber");
-    return value!.toBigInt();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toBigInt();
+    }
   }
 
   set blockNumber(value: BigInt) {
@@ -445,7 +623,11 @@ export class VideoPost extends Entity {
 
   get blockTimestamp(): BigInt {
     let value = this.get("blockTimestamp");
-    return value!.toBigInt();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toBigInt();
+    }
   }
 
   set blockTimestamp(value: BigInt) {
@@ -454,7 +636,11 @@ export class VideoPost extends Entity {
 
   get transactionHash(): Bytes {
     let value = this.get("transactionHash");
-    return value!.toBytes();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toBytes();
+    }
   }
 
   set transactionHash(value: Bytes) {
